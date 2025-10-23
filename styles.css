@@ -470,6 +470,197 @@ body {
     color: #1d4ed8;
 }
 
+/* Experience Section */
+.experience {
+    padding: 6rem 0;
+    background-color: #f9fafb;
+}
+
+.experience-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #2563eb, #1d4ed8);
+    transform: translateX(-50%);
+}
+
+.experience-item {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+    align-items: center;
+}
+
+.experience-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.experience-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: #2563eb;
+    border: 4px solid white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 0 4px #e5e7eb;
+}
+
+.experience-item.current::before {
+    background: #10b981;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.experience-image {
+    flex: 0 0 200px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:nth-child(odd) .experience-image {
+    margin-right: 2rem;
+}
+
+.experience-item:nth-child(even) .experience-image {
+    margin-left: 2rem;
+}
+
+.experience-image:hover {
+    transform: scale(1.05);
+}
+
+.exp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-content {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-5px);
+}
+
+.experience-header {
+    margin-bottom: 1.5rem;
+}
+
+.experience-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2563eb;
+    margin-bottom: 0.25rem;
+}
+
+.period {
+    display: block;
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.experience-details h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.experience-details ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.experience-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.experience-details li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-size: 0.8rem;
+}
+
+.supervisor-info {
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+.supervisor-info p {
+    margin-bottom: 0.25rem;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.supervisor-info p:last-child {
+    margin-bottom: 0;
+}
+
+.current-position {
+    font-style: italic;
+    color: #6b7280;
+    text-align: center;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 2px dashed #d1d5db;
+}
+
 /* Contact Section */
 .contact {
     padding: 6rem 0;
@@ -654,6 +845,31 @@ body {
     .profile-image {
         width: 250px;
         height: 250px;
+    }
+
+    /* Experience responsive */
+    .experience-timeline::before {
+        left: 20px;
+    }
+
+    .experience-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 3rem;
+    }
+
+    .experience-item::before {
+        left: 20px;
+    }
+
+    .experience-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 0 1rem 0 !important;
+    }
+
+    .experience-content {
+        width: 100%;
     }
 }
 
